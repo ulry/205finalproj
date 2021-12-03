@@ -1,1 +1,52 @@
 hello world
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import sys
+from PySide6.QtWidgets import (QApplication, QWidget, QLabel, QVBoxLayout)
+from PySide6.QtGui import QPixmap
+from PySide6.QtCore import Qt
+
+class MainWindow(QWidget):
+    def __init__(self):
+        super().__init__()
+        self.label = QLabel()
+        pixmap = QPixmap('images/')
+        pixmap2 = QPixmap('images/')
+        pixmap3 = QPixmap('images/')
+        pixmap4 = QPixmap('images/')
+        pixmap5 = QPixmap('images/')
+        pixmap6 = QPixmap('images/')
+        pixmap7 = QPixmap('images/')
+        pixmap = pixmap.scaled(500, 500, Qt.KeepAspectRatio)
+        self.label.setPixmap(pixmap)
+        self.layout = QVBoxLayout()
+        self.layout.addWidget(self.label)
+        self.setLayout(self.layout)
+   
+app = QApplication(sys.argv)
+main = MainWindow()
+main.show()
+app.exec_()
